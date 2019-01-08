@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="puzzle.css">
+  </head>
+  <body>
+    <div class="Puzzle" id='puzzle'>
+      <ul class="Puzzle__cells" id='puzzle_cells'></ul>
+    </div>
+    <button onClick="Controller.handleSave()">Save</button>
+    <button onClick="Controller.handleRestart()">Restart</button>
+    <script>window.Puzzle = {};</script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+    <script src="view.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

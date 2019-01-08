@@ -1,0 +1,31 @@
+body, ul {
+  margin: 0;
+}
+
+.Puzzle {
+  max-width: calc(2rem * 4);
+}
+
+.Puzzle__cells {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.Puzzle__cell {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.Puzzle__button {
+  font: 300 1rem/1.6 sans-serif;
+  flex: 1;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  /* font-style font-variant font-weight font-size/line-height font-family */
+}
