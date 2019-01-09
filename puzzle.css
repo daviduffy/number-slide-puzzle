@@ -1,24 +1,48 @@
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
 body, ul {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr calc(3rem * 4 + 3px) 1fr;
+  grid-template-rows: 1fr calc(3rem * 4 + 3px) 3rem 4rem 1fr;
+  grid-gap: 1rem;
 }
 
 .Puzzle {
-  max-width: calc(2rem * 4);
+  grid-row: 2;
+  grid-column: 2;
+  margin: auto;
 }
 
 .Puzzle__cells {
   display: grid;
+  grid-gap: 1px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
 }
 
 .Puzzle__cell {
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid;
+  width: 3rem;
+  height: 3rem;
+  background-color: #e2e2e2;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
+  position: relative;
+}
+
+.Puzzle__cell--empty {
+  background-color: #d1d1d1;
+  pointer-events: none;
 }
 
 .Puzzle__button {
@@ -28,4 +52,44 @@ body, ul {
   background: none;
   cursor: pointer;
   /* font-style font-variant font-weight font-size/line-height font-family */
+}
+
+.Controls {
+  grid-row: 3;
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+.Button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  color: #444;
+  background-color: #e2e2e2;
+  padding: 0.675rem 0.875rem;
+}
+
+.Button--save {
+  color: #fefefe;
+  background-color: #2ecc71;
+}
+.Button--reset {
+  color: #fefefe;
+  background-color: #e74c3c;
+}
+
+.Scoreboard {
+  grid-row: 4;
+  grid-column: 2;
+  display: flex;
+}
+
+.Scoreboard__moves {
+  border: 1px solid #e2e2e2;
+  color: #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  padding: 0.5rem;
 }

@@ -7,11 +7,25 @@
     <link rel="stylesheet" href="puzzle.css">
   </head>
   <body>
-    <div class="Puzzle" id='puzzle'>
-      <ul class="Puzzle__cells" id='puzzle_cells'></ul>
+    <div class="container">
+      <div class="Puzzle" id='puzzle'>
+        <ul class="Puzzle__cells" id='puzzle_cells'></ul>
+      </div>
+      <div class="Controls">
+        <button class="Button Button--new" onClick="Controller.handleNew()">New</button>
+        <button class="Button Button--save" onClick="Controller.handleSave()">Save</button>
+        <button class="Button Button--reset" onClick="Controller.handleReset()">Reset</button>
+      </div>
+      <div class="Scoreboard">
+        <div class="Scoreboard__moves">
+          <span>Moves</span>
+          <span id="moves">0</span>
+        </div>
+        <div class="Scoreboard__timer">
+          <span id="timer">00:00</span>
+        </div>
+      </div>
     </div>
-    <button onClick="Controller.handleSave()">Save</button>
-    <button onClick="Controller.handleRestart()">Restart</button>
     <script>window.Puzzle = {};</script>
     <script src="model.js"></script>
     <script src="controller.js"></script>
